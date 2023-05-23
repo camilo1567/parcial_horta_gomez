@@ -9,37 +9,31 @@
     <link rel="stylesheet" href="~/parcial_Horta_Gomez.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">parcial_Horta_Gomez</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="bg-red-500 p-10" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-semibold text-xl text-gray-800">Logo</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
+                    <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Auth/login">Login</a>
+                    <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Auth/Register">Regiser</a>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - parcial_Horta_Gomez - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="bg-gray-200">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-600">© 2023 Your Company. All rights reserved.</p>
         </div>
     </footer>
 
