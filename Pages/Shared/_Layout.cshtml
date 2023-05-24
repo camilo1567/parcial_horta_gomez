@@ -12,12 +12,13 @@
 <body class="bg-gray-100">
     <header class="bg-white shadow">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between p-2">
                 <div class="flex items-center">
-                    <a href="#" class="font-semibold text-xl text-gray-800">Logo</a>
+                    <a asp-area="" asp-page="/Index" class="font-bold text-3xl text-black">ROSTROS FELICES</a>
                 </div>
-                <div class="flex items-center">
-                    <a class="text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Index">Home</a>
+                <div class="flex items-center gap-2">
+                    <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Index">Home</a>
+                    <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Clientes/Index">Clientes</a>
                     <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Auth/login">Login</a>
                     <a class="ml-6 text-gray-600 hover:text-gray-800" asp-area="" asp-page="/Auth/Register">Regiser</a>
                 </div>

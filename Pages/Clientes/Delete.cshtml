@@ -1,4 +1,31 @@
 ﻿@page
 @model parcial_Horta_Gomez.Pages.Clientes.DeleteModel
 @{
+    ViewData["Title"] = "Editars Clientes";
 }
+<form class="bg-white p-10">
+    <div class="mb-4">
+        <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre:
+        </label>
+        <p>
+            MIGUEL GOMEZ
+        </p>
+    </div>
+    <div class="mb-4">
+        <label for="numeroDocumento" class="block text-gray-700 text-sm font-bold mb-2">
+            Número de documento:
+        </label>
+        <p>
+            1234555556
+        </p>
+    </div>
+    <div class="flex gap-2">
+        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outlines">
+            Eliminar
+        </button>
+        <a asp-area="" asp-page="/Clientes/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
+            Regresar
+        </a>
+    </div>
+</form>
