@@ -3,31 +3,46 @@
 @{
     ViewData["Title"] = "Crear Factura";
 }
-<form class="bg-white p-10">
+<form method= "post" class="bg-white p-10">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="mb-4">
-        <label for="servicio_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Servicio:
+        <label asp-for="Factura.NombreCliente" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre del cliente:
         </label>
-        <input type="text" id="servicio_id" name="servicio_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <input asp-for="Factura.NombreCliente" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Factura.NombreCliente" class="text-danger"></span>
     </div>
     <div class="mb-4">
-        <label for="vendedor_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Vendedor
+        <label asp-for="Factura.NombreEmpleado"class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre de empleado que realizó el servicio:
         </label>
-        <input type="text" id="vendedor_id" name="vendedor_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <input asp-for="Factura.NombreEmpleado" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Factura.NombreEmpleado" class="text-danger"></span>
     </div>
     <div class="mb-4">
-        <label for="cliente_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Cliente
+        <label asp-for="Factura.NombreServicio" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre del servicio:
         </label>
-        <input type="text" id="cliente_id" name="cliente_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <input asp-for="Factura.NombreServicio" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Factura.NombreServicio" class="text-danger"></span>
+    </div>
+    <div class="mb-4">
+        <label asp-for="Factura.Fecha" class="block text-gray-700 text-sm font-bold mb-2">
+            Fecha:
+        </label>
+        <input asp-for="Factura.Fecha" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Factura.Fecha" class="text-danger"></span>
     </div>
     <div class="flex gap-2">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
-            Crear
-        </button>
-        <a asp-area="" asp-page="/Facturas/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
+        <input type="submit" value="Crear" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline"/>
+        <a asp-page="/Facturas/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
             Regresar
         </a>
     </div>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
