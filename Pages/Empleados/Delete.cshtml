@@ -3,23 +3,23 @@
 @{
     ViewData["Title"] = "Eliminar Empleado";
 }
-<div class="mb-4">
-        <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Empleado.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Empleado.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Empleado.NumeroDocumento)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Empleado.NumeroDocumento)
-        </dd>
-    </dl>
-    </div>
 <form method="post" class="bg-white p-10">
+    <div class="mb-4">
+        <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre:
+        </label>
+        <p>
+            @Html.DisplayFor(model => model.Empleado.Name)
+        </p>
+    </div>
+    <div class="mb-4">
+        <label for="vendedor_id" class="block text-gray-700 text-sm font-bold mb-2">
+            Documento
+        </label>
+        <p>
+            @Html.DisplayFor(model => model.Empleado.NumeroDocumento)
+        </p>
+    </div>
     <input type="hidden" asp-for="Empleado.Id"/>
     <div class="flex gap-2">
         <button type="submit" class="bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outlines">
