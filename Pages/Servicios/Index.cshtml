@@ -1,30 +1,21 @@
 ﻿@page
-@model parcial_Horta_Gomez.Pages.Facturas.IndexModel
+@model parcial_Horta_Gomez.Pages.Servicios.IndexModel
 @{
-    ViewData["Title"] = "Facturas";
+    ViewData["Title"] = "Servicios";
 }
 <div class="flex justify-start my-2">
-    <a class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline" asp-area="" asp-page="/Facturas/Create">
-        Nueva Factura
+    <a class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline" asp-area="" asp-page="/Servicios/Create">
+        Nuevo Servicio
     </a>
 </div>
 <table class="min-w-full divide-y divide-gray-200">
     <thead class="bg-blue-100">
         <tr>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Servicio
+                Nombre
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Empleado
-            </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Cliente
-            </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Fecha
-            </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-
+                
             </th>
         </tr>
     </thead>
@@ -33,21 +24,6 @@
             <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm font-medium text-gray-900">
                     VENDERSE
-                </div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm font-medium text-gray-900">
-                    MIGUEL GOMEZ
-                </div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm font-medium text-gray-900">
-                    CUALQUIERA
-                </div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">
-                    CREATED_AT
                 </div>
             </td>
             <td class="flex justify-end gap-2 py-4 px-2 whitespace-nowrap">
