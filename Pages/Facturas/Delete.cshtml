@@ -1,12 +1,12 @@
 ﻿@page
 @model parcial_Horta_Gomez.Pages.Servicios.DeleteModel
 @{
-    ViewData["Title"] = "Eliminar Servicio";
+    ViewData["Title"] = "Eliminar Factura";
 }
 <form class="bg-white p-10">
     <div class="mb-4">
         <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">
-            Nombre:
+            Servicio:
         </label>
         <p>
             Vender
@@ -33,14 +33,14 @@
             Fecha
         </label>
         <p>
-            CREATED_ATs
+            CREATED_AT
         </p>
     </div>
     <div class="flex gap-2">
         <button type="submit" class="bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outlines">
             Eliminar
         </button>
-        <a asp-area="" asp-page="/Servicios/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
+        <a asp-area="" asp-page="/Facturas/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
             Regresar
         </a>
     </div>
