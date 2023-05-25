@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using parcial_Horta_Gomez.Data;
+
 namespace parcial_Horta_Gomez
 {
     public class Program
@@ -8,6 +11,10 @@ namespace parcial_Horta_Gomez
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<RostrosFelicesContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("RostrosFelicesDB"))
+            );
 
             var app = builder.Build();
 
