@@ -12,8 +12,8 @@ using parcial_Horta_Gomez.Data;
 namespace parcial_Horta_Gomez.Migrations
 {
     [DbContext(typeof(RostrosFelicesContext))]
-    [Migration("20230525021143_Rostros")]
-    partial class Rostros
+    [Migration("20230525204017_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,15 +89,15 @@ namespace parcial_Horta_Gomez.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("IdCliente")
+                    b.Property<string>("NombreCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdEmpleado")
+                    b.Property<string>("NombreEmpleado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdServicio")
+                    b.Property<string>("NombreServicio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

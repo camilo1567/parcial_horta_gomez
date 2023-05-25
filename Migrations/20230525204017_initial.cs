@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace parcial_Horta_Gomez.Migrations
 {
     /// <inheritdoc />
-    public partial class Rostros : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -79,9 +79,9 @@ namespace parcial_Horta_Gomez.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdServicio = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NombreCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NombreEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NombreServicio = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: true),
                     EmpleadoId = table.Column<int>(type: "int", nullable: true)
