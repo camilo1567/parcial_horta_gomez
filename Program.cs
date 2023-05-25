@@ -12,6 +12,12 @@ namespace parcial_Horta_Gomez
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Auth/Login";
+            });
+
             builder.Services.AddDbContext<RostrosFelicesContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("RostrosFelicesDB"))
             );
