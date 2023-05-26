@@ -3,12 +3,15 @@
 @{
     ViewData["Title"] = "Editar Servicio";
 }
-<form class="bg-white p-10">
+<form method="post" class="bg-white p-10">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Servicio.Id" />
     <div class="mb-4">
-        <label for="servicio_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Servicio
+        <label asp-for="Servicio.Name" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre:
         </label>
-        <input type="text" id="servicio_id" name="servicio_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <input asp-for="Servicio.Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Servicio.Name" class="text-danger"></span>
     </div>
     <div class="flex gap-2">
         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
@@ -19,3 +22,9 @@
         </a>
     </div>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
