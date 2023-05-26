@@ -12,7 +12,7 @@ using parcial_Horta_Gomez.Data;
 namespace parcial_Horta_Gomez.Migrations
 {
     [DbContext(typeof(RostrosFelicesContext))]
-    [Migration("20230525204017_initial")]
+    [Migration("20230526201759_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -136,10 +136,6 @@ namespace parcial_Horta_Gomez.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

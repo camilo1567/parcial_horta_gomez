@@ -38,6 +38,7 @@ namespace parcial_Horta_Gomez
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapRazorPages();

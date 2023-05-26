@@ -7,6 +7,7 @@ using parcial_Horta_Gomez.Models;
 
 namespace parcial_Horta_Gomez.Pages.Empleados
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly RostrosFelicesContext _context;

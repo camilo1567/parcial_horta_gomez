@@ -26,14 +26,14 @@ namespace parcial_Horta_Gomez.Pages.Auth
             if (!ModelState.IsValid) return Page();
 
             var findUser = await _context.Users
-                .Where(x => x.Name == User.Name && x.Email == User.Email && x.Password == User.Password)
+                .Where(x => x.Email == User.Email && x.Password == User.Password)
                 .FirstOrDefaultAsync();
 
             if (findUser != null)
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, User.Name),
+                    new Claim(ClaimTypes.Name, "admin"),
                     new Claim(ClaimTypes.Email, User.Email),
                 };
 
@@ -42,7 +42,7 @@ namespace parcial_Horta_Gomez.Pages.Auth
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
-                RedirectToPage("../Index");
+                return RedirectToPage("../Index");
             }
             else
             {
