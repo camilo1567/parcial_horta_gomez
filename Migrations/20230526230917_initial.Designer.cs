@@ -12,7 +12,7 @@ using parcial_Horta_Gomez.Data;
 namespace parcial_Horta_Gomez.Migrations
 {
     [DbContext(typeof(RostrosFelicesContext))]
-    [Migration("20230526201759_initial")]
+    [Migration("20230526230917_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -101,6 +101,9 @@ namespace parcial_Horta_Gomez.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("price")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteId");
@@ -121,6 +124,9 @@ namespace parcial_Horta_Gomez.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

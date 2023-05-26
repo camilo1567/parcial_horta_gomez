@@ -3,6 +3,7 @@
     public class Factura
     {
         public int Id { get; set; }
+        public int price { get; set; }
         public string NombreCliente { get; set; }
         public string NombreEmpleado { get; set; }
         public string NombreServicio { get; set; }

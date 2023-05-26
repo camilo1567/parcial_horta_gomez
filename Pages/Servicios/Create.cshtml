@@ -13,6 +13,14 @@
         <span asp-validation-for="Servicio.Name" class="text-danger"></span>
     </div>
 
+    <div class="mb-4">
+        <label asp-for="Servicio.Price" class="block text-gray-700 text-sm font-bold mb-2">
+            Precio:
+        </label>
+        <input asp-for="Servicio.Price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Servicio.Price" class="text-danger"></span>
+    </div>
+
     <div class="flex gap-2">
         <input type="submit" value="Crear" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline" />
         <a asp-page="/Servicios/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
