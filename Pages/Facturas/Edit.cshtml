@@ -3,24 +3,51 @@
 @{
     ViewData["Title"] = "Editar Factura";
 }
-<form class="bg-white p-10">
+<form method="post" class="bg-white p-10">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Factura.Id" />
     <div class="mb-4">
-        <label for="servicio_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Servicio
+        <label asp-for="Factura.NombreCliente" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre del cliente:
         </label>
-        <input type="text" id="servicio_id" name="servicio_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <select class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" asp-for="Factura.NombreCliente">
+            @foreach (var cliente in Model.Clientes)
+            {
+                <option value="@cliente.Name">@cliente.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Factura.NombreCliente" class="text-danger"></span>
     </div>
     <div class="mb-4">
-        <label for="vendedor_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Vendedor
+        <label asp-for="Factura.NombreEmpleado"class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre de empleado que realizó el servicio:
         </label>
-        <input type="text" id="vendedor_id" name="vendedor_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <select class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" asp-for="Factura.NombreEmpleado">
+            @foreach (var empleado in Model.Empleados)
+            {
+                <option value="@empleado.Name">@empleado.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Factura.NombreEmpleado" class="text-danger"></span>
     </div>
     <div class="mb-4">
-        <label for="cliente_id" class="block text-gray-700 text-sm font-bold mb-2">
-            Cliente
+        <label asp-for="Factura.NombreServicio" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre del servicio:
         </label>
-        <input type="text" id="cliente_id" name="cliente_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <select class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" asp-for="Factura.NombreServicio">
+            @foreach (var servicio in Model.Servicios)
+            {
+                    <option value="@servicio.Name">@servicio.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Factura.NombreServicio" class="text-danger"></span>
+    </div>
+    <div class="mb-4">
+        <label asp-for="Factura.Fecha" class="block text-gray-700 text-sm font-bold mb-2">
+            Fecha:
+        </label>
+        <input asp-for="Factura.Fecha" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Factura.Fecha" class="text-danger"></span>
     </div>
     <div class="flex gap-2">
         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">

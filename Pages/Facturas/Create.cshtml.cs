@@ -14,8 +14,22 @@ namespace parcial_Horta_Gomez.Pages.Facturas
             _context = context;
         }
 
+        public IList<Cliente> Clientes { get; set; } = default!;
+        public IList<Servicio> Servicios { get; set; } = default!;
+        public IList<Empleado> Empleados { get; set; } = default!;
+
         public IActionResult OnGet()
         {
+
+            if (!_context.Clientes.Any() || !_context.Servicios.Any() || !_context.Empleados.Any())
+            {
+                return NotFound(); 
+            }
+
+            Clientes = _context.Clientes.ToList();
+            Servicios = _context.Servicios.ToList();
+            Empleados = _context.Empleados.ToList();
+
             return Page();
         }
 
