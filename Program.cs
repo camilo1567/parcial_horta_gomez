@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using parcial_Horta_Gomez.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace parcial_Horta_Gomez
 {
