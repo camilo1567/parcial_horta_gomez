@@ -13,7 +13,12 @@ namespace parcial_Horta_Gomez
             // Add services to the container.
             builder.Services.AddRazorPages();
 
-            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = "MyCookieAuth";
+                options.DefaultChallengeScheme = "MyCookieAuth";
+            })
+            .AddCookie("MyCookieAuth", options =>
             {
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Auth/Login";
@@ -44,6 +49,7 @@ namespace parcial_Horta_Gomez
             app.MapRazorPages();
 
             app.Run();
+
         }
     }
 }

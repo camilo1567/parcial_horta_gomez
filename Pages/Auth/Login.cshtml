@@ -4,25 +4,30 @@
     ViewData["Title"] = "Login";
 }
 
-<form method="post">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" asp-for="User.Email" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    <div>
-        <span class="text-danger" asp-validation-for="User.Email"></span>
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <h2 class="text-center text-2xl font-bold">Iniciar Sesion</h2>
+        <hr class="my-4">
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-4">
+                <label asp-for="User.Email" class="block text-gray-700 text-sm font-bold mb-2"></label>
+                <input asp-for="User.Email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required />
+                <span asp-validation-for="User.Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="User.Password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                <input asp-for="User.Password" type="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required />
+                <span asp-validation-for="User.Password" class="text-danger"></span>
+            </div>
+            <div class="flex items-center justify-between">
+                <input type="submit" value="Iniciar Sesion" class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500" />
+                <a asp-page="/Auth/Register" class="text-sm text-gray-600 hover:underline">Aun no tienes una cuenta? Registrate</a>
+            </div>
+        </form>
     </div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" asp-for="User.Password" id="exampleInputPassword1">
-    <div>
-        <span class="text-danger" asp-validation-for="User.Password"></span>
-    </div>
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+
+
