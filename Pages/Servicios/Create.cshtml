@@ -3,19 +3,26 @@
 @{
     ViewData["Title"] = "Crear Servicio";
 }
-<form class="bg-white p-10">
+<form method="post" class="bg-white p-10">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="mb-4">
-        <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">
+        <label asp-for="Servicio.Name" class="block text-gray-700 text-sm font-bold mb-2">
             Nombre:
         </label>
-        <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <input asp-for="Servicio.Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <span asp-validation-for="Servicio.Name" class="text-danger"></span>
     </div>
+
     <div class="flex gap-2">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
-            Crear
-        </button>
-        <a asp-area="" asp-page="/Servicios/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
+        <input type="submit" value="Crear" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline" />
+        <a asp-page="/Servicios/Index" class="bg-black hover:bg-black/50 text-white rounded-lg flex items-center font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
             Regresar
         </a>
     </div>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
