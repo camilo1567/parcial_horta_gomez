@@ -56,6 +56,13 @@ namespace parcial_Horta_Gomez.Pages.Facturas
                 return Page();
             }
 
+                var servicioSeleccionado = await _context.Servicios
+                    .Where(s => s.Name == Factura.NombreServicio)
+                    .FirstOrDefaultAsync();
+
+                Factura.price = servicioSeleccionado != null ? servicioSeleccionado.Price : 0;
+
+
             _context.Attach(Factura).State = EntityState.Modified;
 
             try

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using parcial_Horta_Gomez.Data;
 using parcial_Horta_Gomez.Models;
 
@@ -43,8 +44,11 @@ namespace parcial_Horta_Gomez.Pages.Facturas
                 return Page();
             }
 
-            //var servicioSeleccionado = Servicios?.FirstOrDefault(e => e.Name == Factura.NombreServicio);
-            //Factura.price = servicioSeleccionado != null ? servicioSeleccionado.Price : 0;
+            var servicioSeleccionado = await _context.Servicios
+            .Where(s => s.Name == Factura.NombreServicio)
+            .FirstOrDefaultAsync();
+
+            Factura.price = servicioSeleccionado != null ? servicioSeleccionado.Price : 0;
 
             _context.Facturas.Add(Factura);
             await _context.SaveChangesAsync();
