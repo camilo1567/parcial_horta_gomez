@@ -20,10 +20,9 @@ namespace parcial_Horta_Gomez.Pages.Facturas
 
         public IActionResult OnGet()
         {
-
             if (!_context.Clientes.Any() || !_context.Servicios.Any() || !_context.Empleados.Any())
             {
-                return NotFound(); 
+                return NotFound();
             }
 
             Clientes = _context.Clientes.ToList();
@@ -43,6 +42,9 @@ namespace parcial_Horta_Gomez.Pages.Facturas
             {
                 return Page();
             }
+
+            //var servicioSeleccionado = Servicios?.FirstOrDefault(e => e.Name == Factura.NombreServicio);
+            //Factura.price = servicioSeleccionado != null ? servicioSeleccionado.Price : 0;
 
             _context.Facturas.Add(Factura);
             await _context.SaveChangesAsync();

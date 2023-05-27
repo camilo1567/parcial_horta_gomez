@@ -33,12 +33,14 @@
         <label asp-for="Factura.NombreServicio" class="block text-gray-700 text-sm font-bold mb-2">
             Nombre del servicio:
         </label>
-        <select class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" asp-for="Factura.NombreServicio">
+        <select class="select shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" asp-for="Factura.NombreServicio">
             @foreach (var servicio in Model.Servicios)
             {
                 <option value="@servicio.Name">@servicio.Name</option>
+                <input type="hidden" asp-for="Factura.price" value="@servicio.Price" />
             }
         </select>
+
         <span asp-validation-for="Factura.NombreServicio" class="text-danger"></span>
     </div>
     <div class="mb-4">
@@ -55,6 +57,8 @@
         </a>
     </div>
 </form>
+
+
 
 @section Scripts {
     @{
